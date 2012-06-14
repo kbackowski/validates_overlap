@@ -12,7 +12,7 @@ class OverlapValidator < ActiveModel::EachValidator
   end
 
   def validate(record)
-    record.errors.add(attributes.first, :overlap) if self.find_crossed(record)
+    record.errors.add(:base, :overlap) if self.find_crossed(record)
   end
 
 
